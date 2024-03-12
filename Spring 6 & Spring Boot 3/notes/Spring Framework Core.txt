@@ -2,6 +2,10 @@ Spring Framework Core:
 
     Contents:
     1. Tightly Coupling vs Loose Coupling
+    2. IOC - Inversion of Control
+    3. Dependency Injection
+    4. Annotation based config
+    5. @Qualifier and @Primary Annotations
 
 _____________________________________________
 
@@ -37,6 +41,8 @@ In above example, we are creating new instances for Vehicle and Traveler manuall
 
 When we create Objects using "new"  keyword, those will be stored in Heap Memory in JVM directly.
 
+In case of IOC, the objects like car, bike, cycle etc will be stored in a Spring Container in JVM. 
+
 This is where IOC comes into picture in Spring Framework.
 It creates Objects and manages it's life-cycle for us. These objects are called Spring Beans.
 
@@ -70,10 +76,37 @@ ApplicationContext:
     3. Publication functionality.
     4. Annotation based dependency injection.
 
+Types of config:
+    1. Java based config.
+    2. Annotations based config.
+    3. XML based config.
+
+_____________________________________________
+
+Annotation based Config:
+
+    1. Annotate class with @Component
+    2. Use @ComponentScan to specify package name for scanning the classes that are annotated with @Component annotation
+    3. Use @Autowired to automatically inject the Spring Bean.
+    4. Use @Qualifier to avoid confusion between multiple Spring Beans of the same type.
+    5. Create Spring IOC (ApplicationContext) and Retrieve Bean from Spring IOC.
+
+_____________________________________________
+
+@Qualifier and @Primary Annotations
+
+We use @Primary annotation to give higher preference to a bean when there are multiple beans of the same type. 
+
+Example:
+    We can choose which data source to inject in different environment.
+    Ex: MYSQL data source can be annotated with @Primary while testing for local environment, @Primary to PostgreSQL for prod and so on.
 
 
 
+The following annotations are derived from @Component annotation.
+    1. @Controller  (Controller layer)
+    2. @Service     (Service layer)
+    3. @Repository  (DAO layer)
 
 
-
-
+_____________________________________________
