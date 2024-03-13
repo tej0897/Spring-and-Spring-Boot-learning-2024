@@ -6,6 +6,7 @@ Spring Framework Core:
     3. Dependency Injection
     4. Annotation based config
     5. @Qualifier and @Primary Annotations
+    6. Java Based config vs Annotation Based config
 
 _____________________________________________
 
@@ -108,5 +109,19 @@ The following annotations are derived from @Component annotation.
     2. @Service     (Service layer)
     3. @Repository  (DAO layer)
 
+
+_____________________________________________
+
+Java Based config vs Annotation Based config:
+
+Java :
+    a. Create a method and use @Bean annotation
+    b. We have to write code to create objects and inject dependencies
+    c. Annotations used: @Configuration and @Bean
+
+Annotation:
+    a. Annotate class with @Component
+    b. Spring IOC will take care of creating objects and injecting dependencies
+    c. Annotations used: @Component, @Repository, @Service, @Controller, @Primary, @Qualifier, @Autowired @ComponentScan
 
 _____________________________________________
