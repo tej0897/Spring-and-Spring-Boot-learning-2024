@@ -1,0 +1,11 @@
+Dependency Injection:
+
+Dependency: An object usually requires "objects from other class" to perform some operations. These are called objects dependencies
+    Example: Traveler class objects are dependent on bike/car/cycle class' objects.
+
+        ******
+
+Injection: The process of providing the required dependencies to an object.
+    Example: Injecting car/bike/cycle to traveler object.
+
+_____________________________________________
