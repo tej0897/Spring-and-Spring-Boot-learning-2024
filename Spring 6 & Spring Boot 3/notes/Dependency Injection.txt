@@ -51,14 +51,54 @@ Dependency Injection Types:
 
 2. Setter Based:
     
-        Uses Setter method to inject dependency on any spring-managed bean. 
+    Uses Setter method to inject dependency on any spring-managed bean.
 
-        instead of constructor, we use setter method. Rest remains the same.
+    instead of constructor, we use setter method. Rest remains the same.
 
         ******
 
-3. Field Based:
+3. Field based: (Not recommended)
+
+    Directly assign @Autowired to the Instance Variable.
+
+    Using Field based DI, we do not need to have a constructor or setter methods.
 
 
+        ******
+
+Which is better? (Recommended: Constructor based DI)
+
+For mandatory dependencies, use Constructor based. It'll be ready to use when it is first called.
+
+For Optional dependencies, use setter based DI.
+    (Also, when there is circular dependencies use setter injection)
+
+    Circular dependency: Take two class A and B.
+    Class A is dependent on Class B and Class B is dependent on Class A.
+    In this instance, use setter injection instead of constructor injection.
 
 
+        ******
+
+Advantages of Constructor based DI:
+
+    1. All required dependencies are available at initialization time. (reduces the code also)
+
+    2. Immutability and avoid Null Pointer Exception.
+
+        (We can make the dependent objects immutable by adding final) private final ClassA classA;
+
+        We cannot make it immutable if the injection is done via setters.
+
+    3. Preventing Errors in Tests.
+
+
+Drawback of Field Based DI:
+
+    1. Cannot create immutable Dependency objects like we can in Constructor based.
+    (We cannot make class members final)
+
+    2. Dependencies are tightly coupled with spring IOC container and cannot be used outside of it.
+
+
+_____________________________________________
