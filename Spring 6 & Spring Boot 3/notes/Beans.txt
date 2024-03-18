@@ -17,8 +17,6 @@ Spring Bean Scopes:
     b. Define the scope of a @Component class or a @Bean definition
 
 
-
-
 @Scope types:
     * Singleton
     * prototype
@@ -29,3 +27,14 @@ Spring Bean Scopes:
 
 Last 4 scopes are available only in web-aware apps.
 
+_____________________________________________
+
+@Lazy Annotation:
+
+By default, Spring creates all singleton beans eagerly at the startup / bootstrapping of the application context.
+
+We can load the Spring beans lazily (on-demand) using @Lazy annotation.
+
+It is recommended to use Eager initialization rather than Lazy as it is better to detect all possible errors immediately rather than at runtime.
+
+_____________________________________________
